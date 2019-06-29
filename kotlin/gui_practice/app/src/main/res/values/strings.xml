@@ -27,6 +27,6 @@
 
     <string name="switch_text">Switch</string>
 
-    <string name="button_confirm">CONFIRM</string>
+    <string name="button_check">CHK</string>
 
 </resources>
