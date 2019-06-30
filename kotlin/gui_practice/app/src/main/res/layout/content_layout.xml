@@ -3,15 +3,15 @@
              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_weight="1">
-    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-              android:layout_marginVertical="5dp" android:layout_marginHorizontal="10dp"
-              style="@style/MyTableRowStyle">
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/textView_plaintext"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp" android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -24,16 +24,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton" android:contentDescription="@string/imageButton_desc"/>
+                android:id="@+id/imageButton_editText" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
-    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-              android:layout_marginVertical="5dp" android:layout_marginHorizontal="10dp">
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/password_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView3"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp" android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -45,16 +46,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton2" android:contentDescription="@string/imageButton_desc"/>
+                android:id="@+id/imageButton_password" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
-    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-              android:layout_marginVertical="5dp" android:layout_marginHorizontal="10dp">
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/date_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView5"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp" android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -66,19 +68,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton3" android:contentDescription="@string/imageButton_desc"/>
+                android:id="@+id/imageButton_date" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="10dp">
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/radioButtons_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView6"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp"
-                android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,20 +103,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton4" android:contentDescription="@string/imageButton_desc"
-                android:layout_weight="1"/>
+                android:id="@+id/imageButton_radio" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="10dp">
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/seekBar_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView7"
-                android:textAllCaps="false"
-                android:gravity="center" android:layout_marginHorizontal="10dp"
-                android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <SeekBar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/seekBar_volume"
@@ -124,19 +121,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton6" android:contentDescription="@string/imageButton_desc"
-                android:layout_weight="1"/>
+                android:id="@+id/imageButton_seek" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="10dp">
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/toggleButton_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView8"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp" android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <ToggleButton
                 android:text="@string/toggleButton_text"
                 android:layout_width="match_parent"
@@ -148,19 +143,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton7" android:contentDescription="@string/imageButton_desc"
-                android:layout_weight="1"/>
+                android:id="@+id/imageButton_toggle" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
     <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="10dp">
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/switch_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView9"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp" android:textStyle="bold"/>
+                style="@style/MyTableRowTitle"/>
         <Switch
                 android:text="@string/switch_text"
                 android:layout_width="match_parent"
@@ -168,17 +161,17 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton8" android:contentDescription="@string/imageButton_desc"
-                android:layout_weight="1"/>
+                android:id="@+id/imageButton_switch" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
-    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-              android:layout_marginVertical="5dp" android:layout_marginHorizontal="10dp">
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
         <TextView
                 android:text="@string/multilineText_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView4"
-                android:textStyle="bold" android:gravity="center"
-                android:layout_marginHorizontal="10dp"/>
+                style="@style/MyTableRowTitle"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
@@ -190,7 +183,6 @@
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
-                android:id="@+id/imageButton9" android:contentDescription="@string/imageButton_desc"
-                android:layout_weight="1"/>
+                android:id="@+id/imageButton_multiline" android:contentDescription="@string/imageButton_desc"/>
     </TableRow>
 </TableLayout>
