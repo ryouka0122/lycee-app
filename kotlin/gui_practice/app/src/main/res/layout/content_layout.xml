@@ -17,7 +17,7 @@
                 android:layout_height="match_parent"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/editText"
+                android:id="@+id/editText_inputText"
                 android:hint="@string/editText_inputText"
                 android:autofillHints="@string/editText_inputText"
                 android:selectAllOnFocus="false" android:singleLine="true"/>
@@ -40,7 +40,7 @@
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editText2" android:hint="@string/password_hint"
+                android:id="@+id/editText_password" android:hint="@string/password_hint"
                 android:autofillHints="@string/password_hint"
                 android:singleLine="true"/>
         <ImageButton
@@ -62,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:inputType="date"
                 android:ems="10"
-                android:id="@+id/editText4" android:hint="@string/date_hints"
+                android:id="@+id/editText_date" android:hint="@string/date_hints"
                 android:autofillHints="@string/date_hints"
                 android:singleLine="true"/>
         <ImageButton
@@ -82,7 +82,7 @@
         <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:id="@+id/radioGroup"
         >
             <RadioButton
                     android:text="@string/radioButtons_item1"
@@ -177,7 +177,7 @@
                 android:layout_height="400dp"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/editText3" android:hint="@string/multilineText_hints"
+                android:id="@+id/editText_multiline" android:hint="@string/multilineText_hints"
                 android:autofillHints="@string/multilineText_hints"
         />
         <ImageButton
