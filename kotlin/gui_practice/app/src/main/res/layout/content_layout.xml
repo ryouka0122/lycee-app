@@ -110,6 +110,23 @@
             android:layout_height="match_parent"
             style="@style/MyTableRowStyle">
         <TextView
+                android:text="@string/spinner_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView2"
+                style="@style/MyTableRowTitle"/>
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/spinner_prefecture"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_prefecture" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
                 android:text="@string/seekBar_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/textView7"

@@ -19,6 +19,8 @@
     <string name="radioButtons_item2">洋食</string>
     <string name="radioButtons_item3">中華</string>
 
+    <string name="spinner_text">Spinner</string>
+
     <string name="seekBar_text">Seek Bar</string>
 
     <string name="toggleButton_text">Toggle Button</string>
