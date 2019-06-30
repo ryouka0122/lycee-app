@@ -1,4 +1,34 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="app_button">Button</string>
+
+    <string name="textView_plaintext">Plain Text</string>
+    <string name="editText_inputText">Input text</string>
+
+    <string name="password_text">Password</string>
+    <string name="password_hint">Password</string>
+
+    <string name="date_text">Date</string>
+    <string name="date_hints">Date</string>
+
+    <string name="multilineText_text">Multiline Text</string>
+    <string name="multilineText_hints">Input text</string>
+
+    <string name="radioButtons_text">Radio Buttons</string>
+    <string name="radioButtons_item1">和食</string>
+    <string name="radioButtons_item2">洋食</string>
+    <string name="radioButtons_item3">中華</string>
+
+    <string name="seekBar_text">Seek Bar</string>
+
+    <string name="toggleButton_text">Toggle Button</string>
+    <string name="toggleButton_textOn">Tune On</string>
+    <string name="toggleButton_textOff">Tune Off</string>
+
+    <string name="switch_text">Switch</string>
+
+    <string name="button_check">CHK</string>
+
+    <string name="imageButton_desc">show information</string>
+
 </resources>

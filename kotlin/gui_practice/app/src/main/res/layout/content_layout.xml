@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1">
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/textView_plaintext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView"
+                style="@style/MyTableRowTitle"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editText_inputText"
+                android:hint="@string/editText_inputText"
+                android:autofillHints="@string/editText_inputText"
+                android:selectAllOnFocus="false" android:singleLine="true"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_editText" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/password_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView3"
+                style="@style/MyTableRowTitle"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editText_password" android:hint="@string/password_hint"
+                android:autofillHints="@string/password_hint"
+                android:singleLine="true"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_password" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/date_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView5"
+                style="@style/MyTableRowTitle"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/editText_date" android:hint="@string/date_hints"
+                android:autofillHints="@string/date_hints"
+                android:singleLine="true"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_date" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/radioButtons_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView6"
+                style="@style/MyTableRowTitle"/>
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroup"
+        >
+            <RadioButton
+                    android:text="@string/radioButtons_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioBtn_japanese"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:text="@string/radioButtons_item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioBtn_french"
+                    android:layout_weight="1"/>
+            <RadioButton
+                    android:text="@string/radioButtons_item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/radioBtn_chinese"
+                    android:layout_weight="1"/>
+        </RadioGroup>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_radio" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/seekBar_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView7"
+                style="@style/MyTableRowTitle"/>
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/seekBar_volume"
+        />
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_seek" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/toggleButton_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView8"
+                style="@style/MyTableRowTitle"/>
+        <ToggleButton
+                android:text="@string/toggleButton_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tglBtn_state"
+                android:textOff="@string/toggleButton_textOff"
+                android:textOn="@string/toggleButton_textOn"
+                android:checked="false"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_toggle" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/switch_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView9"
+                style="@style/MyTableRowTitle"/>
+        <Switch
+                android:text="@string/switch_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/switch_state"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_switch" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTableRowStyle">
+        <TextView
+                android:text="@string/multilineText_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/textView4"
+                style="@style/MyTableRowTitle"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editText_multiline" android:hint="@string/multilineText_hints"
+                android:autofillHints="@string/multilineText_hints"
+        />
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
+                android:id="@+id/imageButton_multiline" android:contentDescription="@string/imageButton_desc"/>
+    </TableRow>
+</TableLayout>
