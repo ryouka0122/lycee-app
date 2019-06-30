@@ -29,4 +29,6 @@
 
     <string name="button_check">CHK</string>
 
+    <string name="imageButton_desc">show information</string>
+
 </resources>

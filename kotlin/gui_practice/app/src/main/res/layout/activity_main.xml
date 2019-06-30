@@ -5,9 +5,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
-    <ScrollView
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" tools:layout_editor_absoluteY="118dp">
-        <include layout="@layout/content_layout"/>
-    </ScrollView>
+            android:layout_height="match_parent">
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1">
+            <include layout="@layout/content_layout"/>
+        </ScrollView>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="bottom">
+            <Button
+                    android:text="@string/button_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/pushBtn_check"/>
+        </LinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
