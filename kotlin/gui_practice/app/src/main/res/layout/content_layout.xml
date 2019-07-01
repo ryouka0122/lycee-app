@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content"
+             xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_weight="1">
     <TableRow
@@ -20,7 +20,7 @@
                 android:id="@+id/editText_inputText"
                 android:hint="@string/editText_inputText"
                 android:autofillHints="@string/editText_inputText"
-                android:selectAllOnFocus="false" android:singleLine="true"/>
+                android:selectAllOnFocus="false" android:singleLine="true" android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -42,7 +42,7 @@
                 android:ems="10"
                 android:id="@+id/editText_password" android:hint="@string/password_hint"
                 android:autofillHints="@string/password_hint"
-                android:singleLine="true"/>
+                android:singleLine="true" android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -64,7 +64,7 @@
                 android:ems="10"
                 android:id="@+id/editText_date" android:hint="@string/date_hints"
                 android:autofillHints="@string/date_hints"
-                android:singleLine="true"/>
+                android:singleLine="true" android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radioGroup"
-        >
+                android:layout_weight="1">
             <RadioButton
                     android:text="@string/radioButtons_item1"
                     android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                 style="@style/MyTableRowTitle"/>
         <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/spinner_prefecture"/>
+                android:layout_height="match_parent" android:id="@+id/spinner_prefecture" android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -134,7 +134,7 @@
         <SeekBar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/seekBar_volume"
-        />
+                android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -156,7 +156,7 @@
                 android:id="@+id/tglBtn_state"
                 android:textOff="@string/toggleButton_textOff"
                 android:textOn="@string/toggleButton_textOn"
-                android:checked="false"/>
+                android:checked="false" android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -174,7 +174,7 @@
         <Switch
                 android:text="@string/switch_text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/switch_state"/>
+                android:layout_height="match_parent" android:id="@+id/switch_state" android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
@@ -191,12 +191,12 @@
                 style="@style/MyTableRowTitle"/>
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="300dp"
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/editText_multiline" android:hint="@string/multilineText_hints"
                 android:autofillHints="@string/multilineText_hints"
-        />
+                android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@android:drawable/stat_notify_chat"
