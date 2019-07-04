@@ -1,14 +1,18 @@
 package com.example.myapplication
 
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.myapplication.http.HttpUtil
 import com.example.myapplication.model.PrefCode
+import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.httpGet
-import com.google.gson.Gson
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_layout.*
 import java.util.stream.Collectors
@@ -28,30 +32,78 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupFuel() {
+        FuelManager.instance.basePath = "http://lycee-project.net"
+        FuelManager.instance.baseHeaders = mapOf("UserAgent" to "LyceeAppSample")
+    }
+
     private fun loadPrefCodeList() {
-        val uri = "https://s3-ap-northeast-1.amazonaws.com/lycee-project.net/prefectures.json"
-        val result = uri.httpGet().response()
+        val uri = "/prefectures.json"
+        println("★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★")
+        val result = HttpUtil().post(
+            "http://lycee-project.net/prefectures.json",
+            "", "UTF-8", null
+        )
+        println("★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★")
+        val resultJson = result.body
 
-        val prefCodeList = Gson().fromJson(String(result.second.data), PrefCode::class.java)
+        resultJson?.let {
+            setupPrefCodeList(it)
+        }
+    }
 
-        //prefCodeList.test()
-        /*
-            val prefNames = prefCodeList.toNameList()
-    */
+    private fun setupPrefCodeList(prefCodeJson: String) {
         val adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item)
-        adapter.add("test1")
-        adapter.add("test2")
-        adapter.add("test3")
-        adapter.add("test4")
+        var prefCodeList: PrefCode? = null
+
+        if (prefCodeJson.isNotBlank()) {
+            prefCodeList = Moshi.Builder()
+                .add(KotlinJsonAdapterFactory())
+                .build()
+                .adapter(PrefCode::class.java)
+                .fromJson(prefCodeJson)
+        }
+        if (null == prefCodeList?.prefCode) {
+            adapter.add("test1")
+            adapter.add("test2")
+            adapter.add("test3")
+            adapter.add("test4")
+        }else{
+            prefCodeList.prefCode?.forEach {
+                adapter.add(it.name)
+            }
+        }
         spinner_prefecture.adapter = adapter
     }
 
+    inner class MyAsyncTask: AsyncTask<Void, Void, String?>() {
+        override fun doInBackground(vararg params: Void?): String? {
+            val response = "/prefecture.json".httpGet().response()
+            return String(response.second.data)
+
+
+
+            /*
+            val response = HttpUtil().post("http://lycee-project.net/prefectures.json",
+                "", "UTF-8", null)
+            return response.body
+            */
+        }
+
+        override fun onPostExecute(result: String?) {
+            result?.let {
+                println("★★★★★★★★★★★★result: $result ★★★★★★★★★★★★★★★★★★★★★★★★")
+                setupPrefCodeList(it)
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        loadPrefCodeList()
+        setupFuel()
+        MyAsyncTask().execute()
 
         // button event [Plain Text]
         clickListener(imageButton_editText,
@@ -91,6 +143,7 @@ class MainActivity : AppCompatActivity() {
                 return spinner_prefecture.selectedItem.toString()
             }
         )
+
         val _this = this
         spinner_prefecture.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {

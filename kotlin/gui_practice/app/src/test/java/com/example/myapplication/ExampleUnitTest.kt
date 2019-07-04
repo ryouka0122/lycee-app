@@ -3,6 +3,8 @@ package com.example.myapplication
 import com.example.myapplication.model.PrefCode
 import com.github.kittinunf.fuel.httpGet
 import com.google.gson.Gson
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -19,8 +21,8 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test_http_connection() {
-        val uri = "https://s3-ap-northeast-1.amazonaws.com/lycee-project.net/prefectures.json"
+    fun test_GSON_http_connection() {
+        val uri = "http://lycee-project.net/prefectures.json"
         val result = uri.httpGet().response()
 
         println(String(result.second.data))
@@ -29,6 +31,27 @@ class ExampleUnitTest {
         println()
         println("+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +")
         prefCode.prefCode?.let {
+            it.forEach(fun(it2) {
+                println(it2.code + "::" + it2.name)
+            })
+        }
+    }
+
+    @Test
+    fun test_Moshi_http_connection() {
+        val uri = "http://lycee-project.net/prefectures.json"
+        val result = uri.httpGet().response()
+        val resultJson = String(result.second.data)
+
+        println(resultJson)
+
+
+        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+        val prefCode = moshi.adapter(PrefCode::class.java).fromJson(resultJson)
+
+        println()
+        println("+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +")
+        prefCode?.prefCode?.let {
             it.forEach(fun(it2) {
                 println(it2.code + "::" + it2.name)
             })
